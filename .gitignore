@@ -13,3 +13,5 @@ configure/*.local
 O.*/
 *~
 *.swp
+# SLAC changes
+RELEASE_SITE
