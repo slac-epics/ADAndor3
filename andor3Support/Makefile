@@ -20,6 +20,16 @@ LIB_INSTALLS_Linux += ../os/linux-x86_64/libatcore.so.3.13.30034.0
 LIB_INSTALLS_Linux += ../os/linux-x86_64/libatcore.so.3
 LIB_INSTALLS_Linux += ../os/linux-x86_64/libatcore.so
 
+else ifeq (rhel6-x86_64, $(findstring rhel6-x86_64, $(T_A)))
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatcore.so.3.13.30034.0
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatcore.so.3
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatcore.so
+
+else ifeq (rhel7-x86_64, $(findstring rhel7-x86_64, $(T_A)))
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatcore.so.3.13.30034.0
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatcore.so.3
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatcore.so
+
 else ifeq (linux-x86, $(findstring linux-x86, $(T_A)))
 LIB_INSTALLS_Linux += ../os/linux-x86/libatcore.so.3.13.30034.0
 LIB_INSTALLS_Linux += ../os/linux-x86/libatcore.so.3

@@ -13,6 +13,8 @@ include $(TOP)/configure/CONFIG
 
 DB += andor3.template
 
+REQ += andor3_settings.req
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>
