@@ -19,7 +19,7 @@
 # Don't set your version to anything such as "test" that
 # could match a directory name.
 # ==========================================================
-ADCORE_MODULE_VERSION = R3.1-2.3.5
+ADCORE_MODULE_VERSION = R3.1-2.3.8
 ASYN_MODULE_VERSION = R4.32-1.0.0
 # ==========================================================
 # External Support module path definitions
