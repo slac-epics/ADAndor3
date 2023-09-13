@@ -3,7 +3,7 @@
 RELEASE_NOTES for ADAndor3
 #==============================================================
 
-R2.2.14-1.0.0  13-Sep-2023  M. Dunning (mdunning)
+R2.2.23-1.0.0  13-Sep-2023  M. Dunning (mdunning)
     Merge latest from ADAndor3 github master
     Merge changes to support CBXFEL (https://github.com/areaDetector/ADAndor3/pull/14), including:
         Add support for gating and image intensifier for iStar
