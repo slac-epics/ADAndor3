@@ -2,6 +2,9 @@
 #==============================================================
 RELEASE_NOTES for ADAndor3
 #==============================================================
+R2.2.23-1.0.1  15-Nov-2024  J. Lorelli (lorelli)
+    Only cross compile for linuxRT-x86_64
+    Updated to asyn/R4.39-1.0.2, ADCore/R3.10-1.1.1
 
 R2.2.23-1.0.0  13-Sep-2023  M. Dunning (mdunning)
     Merge latest from ADAndor3 github master
