@@ -19,6 +19,14 @@
 # Don't set your version to anything such as "test" that
 # could match a directory name.
 # ==========================================================
+#
+# PCDS NOTE!
+# The pcds-trunk branch is deprecated.
+# All commits on this branch have been merged to slac-master
+# which contains support for the latest ADAndor3 changes
+# including SLAC support from Michael Dunning for character
+# serial identifiers for opening Zyla and other cameras.
+# Please consider using the slac-master branch for your work.
 ADCORE_MODULE_VERSION = R3.10-1.1.2
 ASYN_MODULE_VERSION = R4.42-1.0.0
 # ==========================================================
