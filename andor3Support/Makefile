@@ -48,6 +48,44 @@ LIB_INSTALLS_Linux += ../os/linux-x86/libatcore.so
 endif
 
 #=============================
+# These are vendor libraries from the Andor3 SDK which are not included in ADAndor3, and are needed at runtime.
+# They should work with most recent x86_64 linux distros (but not RHEL6).
+ifeq (linux-x86_64, $(findstring linux-x86_64, $(T_A)))
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatdevregcam.so.3.15.30092.2
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatdevregcam.so
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatusb_libusb10.so.3.15.30092.2
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatusb_libusb10.so
+
+else ifeq (rhel7-x86_64, $(findstring rhel7-x86_64, $(T_A)))
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatdevregcam.so.3.15.30092.2
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatdevregcam.so
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatusb_libusb10.so.3.15.30092.2
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatusb_libusb10.so
+
+else ifeq (rhel9-x86_64, $(findstring rhel9-x86_64, $(T_A)))
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatdevregcam.so.3.15.30092.2
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatdevregcam.so
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatusb_libusb10.so.3.15.30092.2
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatusb_libusb10.so
+
+else ifeq (linuxRT-x86_64, $(findstring linuxRT-x86_64, $(T_A)))
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatdevregcam.so.3.15.30092.2
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatdevregcam.so
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatusb_libusb10.so.3.15.30092.2
+LIB_INSTALLS_Linux += ../os/linux-x86_64/libatusb_libusb10.so
+
+else ifeq (linux-x86, $(findstring linux-x86, $(T_A)))
+LIB_INSTALLS_Linux += ../os/linux-x86/libatdevregcam.so.3.15.30092.2
+LIB_INSTALLS_Linux += ../os/linux-x86/libatdevregcam.so
+LIB_INSTALLS_Linux += ../os/linux-x86/libatusb_libusb10.so.3.15.30092.2
+LIB_INSTALLS_Linux += ../os/linux-x86/libatusb_libusb10.so
+
+endif
+
+#=============================
+
+
+#=============================
 
 include $(TOP)/configure/RULES
 #----------------------------------------
