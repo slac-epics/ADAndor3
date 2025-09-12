@@ -36,6 +36,17 @@ int main()
         wcstombs(szCamModel, CameraModel, 64);
         std::cout << szCamModel << std::endl;
       }
+      
+      // To show serial number in addition to cameral model from Mike Dunning's andor3ListDevices.cpp      
+      AT_WC CameraSerial[64];
+      iErr = AT_GetString(Hndl, L"SerialNumber", CameraSerial, 64);
+      if (iErr != AT_SUCCESS) {
+        std::cout << "Error from AT_GetString('SerialNumber') : " << iErr << std::endl;
+      } else if (iErr == AT_SUCCESS) {
+        char szCamSerial[64];
+        wcstombs(szCamSerial, CameraSerial, 32);
+        std::cout << " (" << szCamSerial << ")" << std::endl;
+      }
 
       iErr = AT_Close(Hndl);
       if (iErr != AT_SUCCESS) {
