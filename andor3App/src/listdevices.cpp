@@ -21,7 +21,9 @@ int main()
     std::cout << "Device " << i << " : ";
     AT_H Hndl  = AT_HANDLE_UNINITIALISED;
     iErr = AT_Open(static_cast<int>(i), &Hndl);
-    if (iErr != AT_SUCCESS) {
+    if (iErr == AT_ERR_DEVICEINUSE) {
+      std::cout << "device " << i << ": in use!  Unable to open. Error " << iErr << std::endl;
+    } else if (iErr != AT_SUCCESS) {
       std::cout << "Error from AT_Open() : " << iErr << std::endl;
     }
     else {

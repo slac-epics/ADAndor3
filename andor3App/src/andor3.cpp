@@ -991,8 +991,14 @@ int andor3::connectCamera(void)
     for (long long i=0; i<deviceCount; ++i) {
         handle_ = AT_HANDLE_UNINITIALISED;
         status = AT_Open(static_cast<int>(i), &handle_);
-        if (status != AT_SUCCESS) {
-            asynPrint(pasynUserSelf, ASYN_TRACE_FLOW,
+        if (status == AT_ERR_DEVICEINUSE) {
+            asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+               "%s:%s: device %lld: in use!  Unable to open (%d)\n",
+                driverName, functionName, i, status);
+            printf( "%s:%s: device %lld: in use!  Unable to open (%d)\n",
+                driverName, functionName, i, status);
+        } else if (status != AT_SUCCESS) {
+            asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
                "%s:%s: device %lld: unable to open (%d)\n",
                 driverName, functionName, i, status);
         } else {
