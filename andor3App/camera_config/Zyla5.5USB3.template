@@ -10,7 +10,7 @@ record( stringin, "$(P)$(R)CamModel" )
 
 record( stringin, "$(P)$(R)CamModelScreen" )
 {
-	field( VAL,   "andor3Screens/AndorFeatures.edl" )
+	field( VAL,   "andor3Screens/Andor3Features.edl" )
 	field( PINI,  "YES" )
 }
 
@@ -22,7 +22,7 @@ record( stringin, "$(P)$(R)CamType" )
 
 record( stringin, "$(P)$(R)CamTypeScreen" )
 {
-	field( VAL,   "andorScreens/AndorCamType.edl" )
+	field( VAL,   "andor3Screens/Andor3CamType.edl" )
 	field( PINI,  "YES" )
 }
 
