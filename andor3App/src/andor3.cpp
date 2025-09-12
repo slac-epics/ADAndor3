@@ -971,6 +971,8 @@ int andor3::connectCamera(void)
     AT_WC serialNumWide[64]; 
     char serialNumChar[64];
     std::string serialNumStr, camIndexStr;
+    printf( "%s:%s: Disconnecting cameras...\n",
+        driverName, functionName );
 
     /* disconnect any connected camera first */
     disconnectCamera();
@@ -983,8 +985,13 @@ int andor3::connectCamera(void)
             driverName, functionName);
         return status;
     }
-    asynPrint(pasynUserSelf, ASYN_TRACE_FLOW,
+
+    pasynTrace -> setTraceMask(pasynUserSelf, 0x11);
+
+    asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
        "%s:%s: found %lld devices, searching for %s...\n",
+        driverName, functionName, deviceCount, serialNum_.c_str());
+    printf( "%s:%s: found %lld devices, searching for %s...\n",
         driverName, functionName, deviceCount, serialNum_.c_str());
 
     /* loop over detected devices, searching for serial number of our camera or matching camera number */
@@ -1001,12 +1008,16 @@ int andor3::connectCamera(void)
             asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
                "%s:%s: device %lld: unable to open (%d)\n",
                 driverName, functionName, i, status);
+            printf( "%s:%s: device %lld: unable to open (%d)\n",
+                driverName, functionName, i, status);
         } else {
             /* for serial number matching, get serial number from camera & convert to string */
             AT_GetString(handle_, L"SerialNumber", serialNumWide, 64);
             wcstombs(serialNumChar, serialNumWide, 64);
-            asynPrint(pasynUserSelf, ASYN_TRACE_FLOW,
+            asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
                 "%s:%s: device %lld: serial number=%s\n", 
+                driverName, functionName, i, serialNumChar);
+            printf( "%s:%s: device %lld: serial number=%s\n", 
                 driverName, functionName, i, serialNumChar);
             serialNumStr = serialNumChar;
 
@@ -1015,12 +1026,18 @@ int andor3::connectCamera(void)
             ss << i;
             camIndexStr = ss.str();
 
+	    printf("serialNum_=%s, camIndexStr=%s, serialNumStr=%s, serialNumStr.length()=%zu\n", serialNum_.c_str(), camIndexStr.c_str(), serialNumStr.c_str(), serialNumStr.length());
+
+
+
             /* test all matching conditions */
             if ((serialNumStr == serialNum_) ||
                     ((serialNum_ == camIndexStr) && (serialNumStr.length() > 0))) {
                 cameraFound = true;
-                asynPrint(pasynUserSelf, ASYN_TRACE_FLOW,
+                asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
                     "%s:%s: connected to camera %s\n",
+                    driverName, functionName, serialNum_.c_str());
+                printf( "%s:%s: connected to camera %s\n",
                     driverName, functionName, serialNum_.c_str());
                 break;
             } else {
@@ -1356,6 +1373,7 @@ extern "C" int andor3Config(const char *portName, const char *cameraSerial, int 
                             size_t maxMemory, int priority, int stackSize,
                             int maxFrames)
 {
+	printf( "Creating new andor3 object ...\n" );
     new andor3(portName, cameraSerial, maxBuffers, maxMemory, priority, stackSize,
                maxFrames);
     return(asynSuccess);
@@ -1436,6 +1454,8 @@ andor3::andor3(const char *portName, const char *cameraSerial, int maxBuffers,
     setStringParam(ADStringToServer, "<not used by driver>");
     setStringParam(ADStringFromServer, "<not used by driver>");
 
+    printf( "%s:%s: Initializing Andor library API ...\n",
+        driverName, functionName );
     /* open camera (also allocates frames) */
     status = AT_InitialiseLibrary();
     if(status != AT_SUCCESS) {
@@ -1446,6 +1466,8 @@ andor3::andor3(const char *portName, const char *cameraSerial, int maxBuffers,
     }
     AtInitialized++;
 
+    printf( "%s:%s: Andor library API Initialized.\n",
+        driverName, functionName );
     status = connectCamera();
     if(status != AT_SUCCESS) {
         asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
