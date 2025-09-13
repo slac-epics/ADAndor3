@@ -19,7 +19,7 @@ ctlBgColor1 index 5
 ctlBgColor2 index 12
 topShadowColor index 1
 botShadowColor index 13
-title "CamType Andor"
+title "CamType Andor3"
 showGrid
 snapToGrid
 gridSize 4
@@ -91,7 +91,7 @@ buttonLabel "        Model Specific        "
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "andorScreens/camModel.edl"
+  0 "andor3Screens/camModel.edl"
 }
 setPosition {
   0 "button"
@@ -205,7 +205,7 @@ buttonLabel "        Model Specific        "
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "andorScreens/Andor.edl"
+  0 "andor3Screens/Andor3.edl"
 }
 setPosition {
   0 "button"
@@ -263,8 +263,8 @@ bgColor index 63
 inconsistentColor index 12
 topShadowColor index 2
 botShadowColor index 12
-controlPv "$(P)$(R)AndorEMGainMode"
-indicatorPv "$(P)$(R)AndorEMGainMode"
+controlPv "$(P)$(R)Andor3PreAmpGain"
+indicatorPv "$(P)$(R)Andor3PreAmpGain"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
@@ -283,8 +283,8 @@ bgColor index 63
 inconsistentColor index 12
 topShadowColor index 2
 botShadowColor index 12
-controlPv "$(P)$(R)AndorEMGainAdvanced"
-indicatorPv "$(P)$(R)AndorEMGainAdvanced"
+controlPv "$(P)$(R)Andor3EMGainAdvanced"
+indicatorPv "$(P)$(R)Andor3EMGainAdvanced"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
@@ -298,7 +298,7 @@ x 248
 y 188
 w 92
 h 20
-controlPv "$(P)$(R)AndorADCSpeed_RBV"
+controlPv "$(P)$(R)Andor3ADCSpeed_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fgColor index 15
@@ -341,7 +341,7 @@ x 248
 y 88
 w 92
 h 20
-controlPv "$(P)$(R)AndorPreAmpGain_RBV"
+controlPv "$(P)$(R)Andor3PreAmpGain_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fgColor index 15
@@ -384,7 +384,7 @@ x 248
 y 112
 w 92
 h 20
-controlPv "$(P)$(R)AndorEMGain_RBV"
+controlPv "$(P)$(R)Andor3EMGain_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fgColor index 15
@@ -427,7 +427,7 @@ x 248
 y 136
 w 92
 h 20
-controlPv "$(P)$(R)AndorEMGainMode_RBV"
+controlPv "$(P)$(R)Andor3EMGainMode_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fgColor index 15
@@ -470,7 +470,7 @@ x 248
 y 164
 w 92
 h 20
-controlPv "$(P)$(R)AndorEMGainAdvanced_RBV"
+controlPv "$(P)$(R)Andor3EMGainAdvanced_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fgColor index 15
@@ -513,7 +513,7 @@ x 144
 y 112
 w 88
 h 20
-controlPv "$(P)$(R)AndorEMGain"
+controlPv "$(P)$(R)Andor3EMGain"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fgColor index 25
@@ -538,7 +538,7 @@ x 144
 y 188
 w 88
 h 20
-controlPv "$(P)$(R)AndorADCSpeed"
+controlPv "$(P)$(R)Andor3ADCSpeed"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fgColor index 25
@@ -562,7 +562,7 @@ x 144
 y 88
 w 88
 h 20
-controlPv "$(P)$(R)AndorPreAmpGain"
+controlPv "$(P)$(R)Andor3PreAmpGain"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fgColor index 25

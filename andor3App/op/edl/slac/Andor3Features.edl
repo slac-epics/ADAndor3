@@ -73,7 +73,7 @@ fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Andor Camera"
+  "Andor3 Camera"
 }
 endObjectProperties
 
