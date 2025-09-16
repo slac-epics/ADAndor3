@@ -19,7 +19,7 @@
 # Don't set your version to anything such as "test" that
 # could match a directory name.
 # ==========================================================
-ADCORE_MODULE_VERSION   = R3.10-1.1.2
+ADCORE_MODULE_VERSION   = R3.10-1.2.0
 ASYN_MODULE_VERSION     = R4.42-1.0.0
 
 # ==========================================================
