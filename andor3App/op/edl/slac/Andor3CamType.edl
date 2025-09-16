@@ -20,10 +20,10 @@ ctlBgColor2 index 12
 topShadowColor index 1
 botShadowColor index 13
 title "CamType Andor3"
+disableScroll
 showGrid
 snapToGrid
 gridSize 4
-disableScroll
 endScreenProperties
 
 # (Related Display)
@@ -121,8 +121,8 @@ h 16
 controlPv "$(P)$(R)CamModel"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
-fgColor index 14
-bgColor index 3
+fgColor index 15
+bgColor index 12
 limitsFromDb
 nullColor index 0
 useHexPrefix
@@ -146,8 +146,8 @@ w 112
 h 24
 controlPv "$(P)$(R)CamType"
 font "helvetica-bold-r-12.0"
-fgColor index 14
-bgColor index 3
+fgColor index 15
+bgColor index 12
 limitsFromDb
 nullColor index 25
 useHexPrefix
@@ -235,8 +235,8 @@ h 16
 controlPv "$(P)$(R)CamModel"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
-fgColor index 14
-bgColor index 3
+fgColor index 15
+bgColor index 12
 limitsFromDb
 nullColor index 0
 useHexPrefix
