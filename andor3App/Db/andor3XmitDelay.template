@@ -1,0 +1,74 @@
+# Database for estimating XmitDelay for Andor Cameras
+
+# XmitDelay for Newton D0940P
+# 0.0001 sec exposure, 0 delay
+#    1 x    1 image, 04.79ms to 09.39ms
+#    1 x  100 image, ??.??ms to ??.??ms
+#    1 x  512 image, 28.98ms to 29.05ms
+#    2 x  512 image, 29.02ms to 29.11ms
+#  512 x    2 image, 37.94ms to 38.19ms
+#  512 x    4 image, ?7.94ms to ?8.19ms
+#  512 x  100 image, ?7.94ms to ?8.19ms
+#  512 x  200 image, ?7.94ms to ?8.19ms
+#  512 x  400 image, ?7.94ms to ?8.19ms
+# 1024 x    1 image, 03.86ms to 08.95ms
+# 1024 x    2 image, 04.68ms to 09.73ms
+# 1024 x  100 image, 14.33ms to 19.82ms
+# 1024 x  200 image, 25.49ms to 31.44ms
+# 1024 x  400 image, 47.22ms to 53.45ms
+# 1024 x  512 image, 35.43ms to 40.61ms
+# 2048 x    1 image, 04.31ms to 09.03ms
+# 2048 x    2 image, 05.18ms to 09.68ms
+# 2048 x  512 image, ??.??ms to ??.??ms
+# ProcDelayPerCol =  (1.26-0.25)/2047 = 4.93e-4 ms/col = 0.493e-6 s/col
+# XmitDelayPerRow = (60.78-0.25)/2047 = 0.296 ms/row   = 0.296e-3 s/row
+# Not using XmitDelayPerRow as it's contribution already included in NumPacketsPerImage
+# Testing showed that in terms of transmission over ethernet,
+# each additional row added transmission time for 2048 pixels.
+# Assume ProcDelayPerPixel = ProcDelayPerCol
+# where ProcDelayPerPixel accounts for additional processing delay for each additional pixel.
+# ReadoutTime_RBV includes the readout plus transfer time over USB which makes this simple.
+record( calc, "$(P)$(R)XmitDelay" )
+{
+	field( INPA, "$(P)$(R)ReadoutTime_RBV CP MS" )
+	field( INPB, "$(P)$(R)ArraySize_RBV CPP MS" )
+	field( INPC, "$(P)$(R)ProcDelayPerPixel CPP MS" )
+	field( CALC, "A+(B*C)")
+	field( EGU,  "Sec" )
+	field( PREC, "5" )
+}
+
+record( ao, "$(P)$(R)ProcDelayPerPixel" )
+{
+	field( DOL,  "4.6e-09" )
+	field( EGU,  "Sec/px" )
+	field( PREC, "5" )
+	field( PINI, "YES" )
+	info( autosaveFields, "VAL" )
+}
+
+record( ao, "$(P)$(R)DriverProcDelay" )
+{
+	field( DOL,  "2.0e-5" )
+	field( EGU,  "Sec" )
+	field( PREC, "3" )
+	field( PINI, "YES" )
+	info( autosaveFields, "VAL" )
+}
+
+#
+# TrigToTS_Calc: Calculates expected delay from trigger to timeStamp update 
+# Inputs: All units in seconds
+#   A   - Camera acquire time (exposure length)
+#   B   - Camera image transmission time
+#   C   - Estimated driver processing delay before requesting timestamp
+record( calc, "$(P)$(R)TrigToTS_Calc" )
+{
+	field( INPA, "$(P)$(R)AcquireTime_RBV CP MS" )
+	field( INPB, "$(P)$(R)XmitDelay CP MS" )
+	field( INPC, "$(P)$(R)DriverProcDelay CP MS" )
+	field( CALC, "A+B+C" )
+	field( EGU,  "sec" )
+	field( PREC, "5" )
+}
+

@@ -12,6 +12,7 @@ include $(TOP)/configure/CONFIG
 # databases, templates, substitutions like this
 
 DB += andor3.template
+DB += andor3XmitDelay.template
 
 REQ += andor3_settings.req
 
