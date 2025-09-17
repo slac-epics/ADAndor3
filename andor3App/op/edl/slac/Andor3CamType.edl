@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 501
-y 43
+x 659
+y 608
 w 400
 h 340
 font "helvetica-medium-r-12.0"
@@ -20,10 +20,10 @@ ctlBgColor2 index 12
 topShadowColor index 1
 botShadowColor index 13
 title "CamType Andor3"
-disableScroll
 showGrid
 snapToGrid
 gridSize 4
+disableScroll
 endScreenProperties
 
 # (Related Display)
@@ -254,37 +254,17 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 144
+x 180
 y 136
-w 88
+w 100
 h 20
 fgColor index 14
 bgColor index 63
 inconsistentColor index 12
 topShadowColor index 2
 botShadowColor index 12
-controlPv "$(P)$(R)Andor3PreAmpGain"
-indicatorPv "$(P)$(R)Andor3PreAmpGain"
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 144
-y 164
-w 88
-h 20
-fgColor index 14
-bgColor index 63
-inconsistentColor index 12
-topShadowColor index 2
-botShadowColor index 12
-controlPv "$(P)$(R)Andor3EMGainAdvanced"
-indicatorPv "$(P)$(R)Andor3EMGainAdvanced"
+controlPv "$(P)$(R)PreAmpGain"
+indicatorPv "$(P)$(R)PreAmpGain"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
@@ -294,11 +274,11 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 248
-y 188
+x 296
+y 88
 w 92
 h 20
-controlPv "$(P)$(R)Andor3ADCSpeed_RBV"
+controlPv "$(P)$(R)MCPGain_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fgColor index 15
@@ -317,52 +297,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 44
-y 188
-w 90
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-useDisplayBg
-value {
-  "ADC Speed"
-}
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 248
+x 8
 y 88
-w 92
-h 20
-controlPv "$(P)$(R)Andor3PreAmpGain_RBV"
-format "string"
-font "helvetica-medium-r-14.0"
-fgColor index 15
-bgColor index 12
-limitsFromDb
-nullColor index 40
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 12
-y 88
-w 120
+w 152
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -370,7 +307,7 @@ fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
-  "Pre-amp Gain"
+  "MCP Gain"
 }
 endObjectProperties
 
@@ -380,54 +317,11 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 248
-y 112
-w 92
-h 20
-controlPv "$(P)$(R)Andor3EMGain_RBV"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fgColor index 15
-bgColor index 12
-limitsFromDb
-nullColor index 40
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 64
-y 112
-w 70
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-useDisplayBg
-value {
-  "EM Gain"
-}
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 248
+x 296
 y 136
 w 92
 h 20
-controlPv "$(P)$(R)Andor3EMGainMode_RBV"
+controlPv "$(P)$(R)PreAmpGain_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fgColor index 15
@@ -446,9 +340,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 12
+x 8
 y 136
-w 120
+w 152
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -456,50 +350,7 @@ fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
-  "EM Gain Mode"
-}
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 248
-y 164
-w 92
-h 20
-controlPv "$(P)$(R)Andor3EMGainAdvanced_RBV"
-format "string"
-font "helvetica-medium-r-14.0"
-fgColor index 15
-bgColor index 12
-limitsFromDb
-nullColor index 40
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 12
-y 160
-w 120
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-useDisplayBg
-value {
-  "EM Gain Adv."
+  "PreAmp Gain Mode"
 }
 endObjectProperties
 
@@ -509,60 +360,11 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 144
-y 112
-w 88
-h 20
-controlPv "$(P)$(R)Andor3EMGain"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 144
-y 188
-w 88
-h 20
-controlPv "$(P)$(R)Andor3ADCSpeed"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-limitsFromDb
-nullColor index 40
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 144
+x 180
 y 88
-w 88
+w 100
 h 20
-controlPv "$(P)$(R)Andor3PreAmpGain"
+controlPv "$(P)$(R)MCPGain"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fgColor index 25
