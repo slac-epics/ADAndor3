@@ -26,3 +26,22 @@ record( stringin, "$(P)$(R)CamTypeScreen" )
 	field( PINI,  "YES" )
 }
 
+record( ao, "$(P)$(R)Temperature" )
+{
+        field( DISA, "1" )
+}
+
+record( mbbo, "$(P)$(R)TempControl" )
+{
+        field( DISA, "1" )
+}
+
+record( ao, "$(P)$(R)FrameRate" )
+{
+        field( HOPR, "51" )
+}
+
+record( ao, "$(P)$(R)FrameCount" )
+{
+        field( DISA, "1" )
+}
