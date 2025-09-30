@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 306
-y 301
+x 1509
+y 203
 w 804
 h 1021
 font "helvetica-medium-r-18.0"
@@ -407,9 +407,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 74
-y 194
-w 90
+x 36
+y 196
+w 132
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -452,9 +452,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 74
-y 219
-w 90
+x 44
+y 220
+w 124
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -1705,68 +1705,6 @@ useHexPrefix
 newPos
 objType "controls"
 noExecuteClipMask
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 84
-y 169
-w 248
-h 20
-
-beginGroup
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 84
-y 169
-w 80
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Serial Number"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 172
-y 170
-w 160
-h 18
-controlPv "$(P)$(R)SerialNumber"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fgColor index 25
-bgColor index 5
-autoHeight
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-noExecuteClipMask
-endObjectProperties
-
-endGroup
-
 endObjectProperties
 
 # (Static Text)
@@ -3408,5 +3346,50 @@ h 130
 lineColor index 14
 fillColor index 14
 lineWidth 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 52
+y 168
+w 112
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Serial Number"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 172
+y 170
+w 160
+h 18
+controlPv "$(P)$(R)SerialNumber"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 25
+bgColor index 5
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
 endObjectProperties
 
