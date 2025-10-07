@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 138
-y 90
+x 674
+y 1367
 w 713
 h 816
 font "helvetica-medium-r-12.0"
@@ -446,9 +446,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 24
+x 8
 y 392
-w 104
+w 120
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -515,9 +515,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 24
+x 8
 y 416
-w 104
+w 120
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -584,9 +584,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 24
+x 8
 y 440
-w 104
+w 120
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -603,9 +603,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 24
+x 8
 y 464
-w 104
+w 120
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -672,9 +672,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 24
+x 8
 y 488
-w 104
+w 120
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -706,5 +706,189 @@ onLabel "Snap!"
 offLabel "Snap"
 3d
 font "helvetica-medium-r-14.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 212
+y 516
+w 96
+h 20
+controlPv "$(P)$(R)TransferRate"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 15
+bgColor index 12
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 516
+w 120
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Max transfer rate"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 160
+y 596
+w 92
+h 18
+controlPv "$(P)$(R)Def120HzExposure"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fgColor index 25
+fgAlarm
+bgColor index 5
+editable
+autoHeight
+motifWidget
+nullColor index 40
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 12
+y 596
+w 140
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Default 120Hz Exposure"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 12
+y 568
+w 140
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Default 120Hz TrigDelay"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 160
+y 568
+w 92
+h 18
+controlPv "$(P)$(R)Def120HzTrigDelay"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fgColor index 25
+fgAlarm
+bgColor index 5
+editable
+autoHeight
+motifWidget
+nullColor index 40
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 12
+y 624
+w 140
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Default 120Hz Vert Size"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 160
+y 624
+w 92
+h 18
+controlPv "$(P)$(R)Def120HzSizeY"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fgColor index 25
+fgAlarm
+bgColor index 5
+editable
+autoHeight
+motifWidget
+nullColor index 40
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
 endObjectProperties
 

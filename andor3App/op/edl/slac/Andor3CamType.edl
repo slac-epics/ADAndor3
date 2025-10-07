@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 659
-y 608
+x 2139
+y 1269
 w 400
 h 340
 font "helvetica-medium-r-12.0"
@@ -275,49 +275,6 @@ major 4
 minor 7
 release 0
 x 296
-y 88
-w 92
-h 20
-controlPv "$(P)$(R)MCPGain_RBV"
-format "string"
-font "helvetica-medium-r-14.0"
-fgColor index 15
-bgColor index 12
-limitsFromDb
-nullColor index 40
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 8
-y 88
-w 152
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-useDisplayBg
-value {
-  "MCP Gain"
-}
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 296
 y 136
 w 92
 h 20
@@ -352,30 +309,6 @@ useDisplayBg
 value {
   "PreAmp Gain Mode"
 }
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 180
-y 88
-w 100
-h 20
-controlPv "$(P)$(R)MCPGain"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-limitsFromDb
-nullColor index 40
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
 endObjectProperties
 
 # (Message Button)
@@ -494,6 +427,157 @@ bgColor index 12
 useDisplayBg
 value {
   "POWER_PV: "
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 264
+y 172
+w 116
+h 28
+fgColor index 14
+bgColor index 3
+topShadowColor index 0
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+buttonLabel "Adjust ROI"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "ADStreamScreens/adjustROI.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "CAM=$(CAM),P=$(CAM),R=:"
+}
+replaceSymbols {
+  0 1
+}
+propagateMacros {
+  0 0
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 136
+y 172
+w 120
+h 28
+fgColor index 14
+onColor index 6
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)GoToFullMode"
+pressValue "1"
+onLabel "Full Mode"
+offLabel "Go To Full Mode"
+3d
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 172
+w 124
+h 28
+fgColor index 14
+onColor index 6
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)GoTo120HzMode"
+pressValue "1"
+onLabel "120Hz Mode"
+offLabel "Go To 120Hz Mode"
+3d
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 296
+y 112
+w 92
+h 20
+controlPv "$(P)$(R)FrameRate_RBV"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 15
+bgColor index 12
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 180
+y 112
+w 100
+h 20
+controlPv "$(P)$(R)FrameRate"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 112
+w 152
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Frame rate"
 }
 endObjectProperties
 
