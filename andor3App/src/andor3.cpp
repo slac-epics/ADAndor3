@@ -835,6 +835,12 @@ int andor3::setAOI()
             driverName, functionName, status);   
         return status;
     }
+
+	// Stop acquisition before changing AOI (ROI) as it makes camera hang
+	AT_Command(handle_, L"AcquisitionStop");
+	AT_Flush(handle_);
+	setIntegerParam(ADAcquire, 0);
+
     binX = binValues[binning];
     binY = binValues[binning];
     // There is a bug in the SDK.  
