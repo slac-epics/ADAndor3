@@ -278,7 +278,7 @@ void andor3::imageTask()
             char encodingString[MAX_FEATURE_NAME_LEN];
             AT_64 stride;
             int pixelSize;
-	    int bitsPerPixel = 12;
+	    int bitsPerPixel;
 
             getIntegerParam(NDArraySizeX, &itemp); dims[0] = itemp;
             getIntegerParam(NDArraySizeY, &itemp); dims[1] = itemp;
@@ -293,6 +293,16 @@ void andor3::imageTask()
                 pixelSize = 2;
                 setIntegerParam(NDDataType, NDUInt16);
             }
+
+	    /* Determine bitsPerPixel from the encodingString */
+	    if (strcmp(encodingString, "Mono32")==0) {
+                bitsPerPixel = 32;
+            } else if (strcmp(encodingString, "Mono16")==0) {
+                bitsPerPixel = 16;
+            } else {
+                bitsPerPixel = 12;
+	    }
+
 #ifdef NDBitsPerPixelString
             setIntegerParam( NDBitsPerPixel,  bitsPerPixel  );
 #endif
