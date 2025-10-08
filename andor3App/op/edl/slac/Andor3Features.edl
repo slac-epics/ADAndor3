@@ -3,9 +3,9 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 674
-y 1367
-w 713
+x 968
+y 461
+w 430
 h 816
 font "helvetica-medium-r-12.0"
 fontAlign "center"

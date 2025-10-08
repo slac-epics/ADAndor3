@@ -3,9 +3,9 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1924
-y 368
-w 739
+x 1214
+y 419
+w 445
 h 882
 font "helvetica-medium-r-12.0"
 ctlFont "helvetica-medium-r-12.0"
@@ -33,7 +33,7 @@ minor 0
 release 0
 x 0
 y 0
-w 740
+w 445
 h 40
 lineColor index 56
 fill
@@ -136,7 +136,7 @@ minor 1
 release 0
 x 8
 y 48
-w 720
+w 430
 h 820
 fgColor index 14
 bgColor index 0

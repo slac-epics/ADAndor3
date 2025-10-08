@@ -3,9 +3,9 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1509
-y 203
-w 804
+x 1374
+y 333
+w 720
 h 1021
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-medium-r-14.0"
