@@ -1,6 +1,9 @@
 # Database for estimating XmitDelay for Andor Cameras
 
-# XmitDelay for Newton D0940P
+# XmitDelay for Zyla
+# Sensor Pixels: 2560 x 2160
+# Sensor Readout Rate: 9.25us per row and 9.98ms for entire rows (2160 rows)
+# 
 # 0.0001 sec exposure, 0 delay
 #    1 x    1 image, 04.79ms to 09.39ms
 #    1 x  100 image, ??.??ms to ??.??ms
@@ -30,7 +33,7 @@
 # ReadoutTime_RBV includes the readout plus transfer time over USB which makes this simple.
 record( calc, "$(P)$(R)XmitDelay" )
 {
-	field( INPA, "$(P)$(R)ReadoutTime_RBV CP MS" )
+	field( INPA, "$(P)$(R)ReadoutTime CP MS" )
 	field( INPB, "$(P)$(R)ArraySize_RBV CPP MS" )
 	field( INPC, "$(P)$(R)ProcDelayPerPixel CPP MS" )
 	field( CALC, "A+(B*C)")
@@ -38,6 +41,9 @@ record( calc, "$(P)$(R)XmitDelay" )
 	field( PREC, "5" )
 }
 
+# 4.6 ns is just a guess
+# TODO: Run tests with ROI and timeStampFifo diagnostics
+# to determine optimum value
 record( ao, "$(P)$(R)ProcDelayPerPixel" )
 {
 	field( DOL,  "4.6e-09" )
