@@ -46,7 +46,7 @@ record( calc, "$(P)$(R)XmitDelay" )
 # to determine optimum value
 record( ao, "$(P)$(R)ProcDelayPerPixel" )
 {
-	field( DOL,  "4.6e-09" )
+	field( DOL,  "3.0e-09" )
 	field( EGU,  "Sec/px" )
 	field( PREC, "5" )
 	field( PINI, "YES" )
@@ -55,7 +55,7 @@ record( ao, "$(P)$(R)ProcDelayPerPixel" )
 
 record( ao, "$(P)$(R)DriverProcDelay" )
 {
-	field( DOL,  "2.0e-5" )
+	field( DOL,  "2.5e-4" )
 	field( EGU,  "Sec" )
 	field( PREC, "3" )
 	field( PINI, "YES" )
