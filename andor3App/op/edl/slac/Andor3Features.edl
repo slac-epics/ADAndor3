@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1300
-y 1546
+x 1436
+y 1559
 w 430
 h 816
 font "helvetica-medium-r-12.0"
@@ -55,8 +55,8 @@ h 20
 controlPv "$(P)$(R)TransferRate"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fgColor index 15
-bgColor index 12
+fgColor index 25
+bgColor index 5
 nullColor index 32
 smartRefresh
 fastUpdate
@@ -260,130 +260,6 @@ value {
 }
 endObjectProperties
 
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 44
-y 36
-w 288
-h 20
-
-beginGroup
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 44
-y 36
-w 120
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Manufacturer"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 172
-y 37
-w 160
-h 18
-controlPv "$(P)$(R)Manufacturer_RBV"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fgColor index 25
-bgColor index 5
-autoHeight
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-noExecuteClipMask
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 112
-y 60
-w 218
-h 20
-
-beginGroup
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 112
-y 60
-w 50
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Model"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 170
-y 61
-w 160
-h 18
-controlPv "$(P)$(R)Model_RBV"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fgColor index 25
-bgColor index 5
-autoHeight
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-noExecuteClipMask
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
@@ -397,9 +273,8 @@ h 18
 controlPv "$(P)$(R)FirmwareVersion"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fgColor index 25
-bgColor index 5
-autoHeight
+fgColor index 15
+bgColor index 12
 nullColor index 32
 smartRefresh
 fastUpdate
@@ -415,15 +290,14 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 36
+x 12
 y 112
-w 132
+w 152
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
 fgColor index 14
-bgColor index 0
-useDisplayBg
+bgColor index 3
 value {
   "Firmware Vers."
 }
@@ -438,7 +312,7 @@ release 0
 x 172
 y 136
 w 160
-h 18
+h 16
 controlPv "$(P)$(R)SoftwareVersion"
 format "decimal"
 font "helvetica-medium-r-14.0"
@@ -460,15 +334,14 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 44
+x 12
 y 136
-w 124
+w 152
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
 fgColor index 14
-bgColor index 0
-useDisplayBg
+bgColor index 3
 value {
   "Software Vers."
 }
@@ -480,15 +353,14 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 52
+x 12
 y 84
-w 112
+w 152
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
 fgColor index 14
-bgColor index 0
-useDisplayBg
+bgColor index 3
 value {
   "Serial Number"
 }
@@ -507,9 +379,8 @@ h 18
 controlPv "$(P)$(R)SerialNumber"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fgColor index 25
-bgColor index 5
-autoHeight
+fgColor index 15
+bgColor index 12
 nullColor index 32
 smartRefresh
 fastUpdate
@@ -951,5 +822,91 @@ botShadowColor index 12
 controlPv "$(P)$(R)NoiseFilter"
 indicatorPv "$(P)$(R)NoiseFilter"
 font "helvetica-medium-r-14.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 12
+y 36
+w 152
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Manufacturer"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 172
+y 37
+w 160
+h 20
+controlPv "$(P)$(R)Manufacturer_RBV"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 15
+bgColor index 12
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 12
+y 60
+w 152
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Model"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 170
+y 61
+w 160
+h 18
+controlPv "$(P)$(R)Model_RBV"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 15
+bgColor index 12
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
 endObjectProperties
 
