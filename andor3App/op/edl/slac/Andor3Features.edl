@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1436
-y 1559
+x 1168
+y 1555
 w 430
 h 816
 font "helvetica-medium-r-12.0"
@@ -42,8 +42,8 @@ fillColor index 14
 lineWidth 0
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 7
@@ -53,17 +53,16 @@ y 516
 w 96
 h 20
 controlPv "$(P)$(R)TransferRate"
-format "decimal"
 font "helvetica-medium-r-14.0"
-fgColor index 25
-bgColor index 5
-nullColor index 32
-smartRefresh
-fastUpdate
+fontAlign "center"
+fgColor index 15
+bgColor index 12
+limitsFromDb
+nullColor index 25
 useHexPrefix
+showUnits
 newPos
-objType "controls"
-noExecuteClipMask
+objType "monitors"
 endObjectProperties
 
 # (Static Text)
