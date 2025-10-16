@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1251
-y 1486
+x 986
+y 1114
 w 430
 h 816
 font "helvetica-medium-r-12.0"
@@ -35,9 +35,24 @@ major 4
 minor 0
 release 0
 x 4
+y 580
+w 420
+h 132
+lineColor index 14
+fillColor index 14
+lineWidth 0
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
 y 172
 w 420
-h 628
+h 396
 lineColor index 14
 fillColor index 14
 lineWidth 0
@@ -92,7 +107,7 @@ major 4
 minor 7
 release 0
 x 168
-y 456
+y 512
 w 104
 h 20
 controlPv "$(P)$(R)Def120HzExposure"
@@ -118,7 +133,7 @@ major 4
 minor 1
 release 1
 x 8
-y 456
+y 512
 w 156
 h 20
 font "helvetica-medium-r-14.0"
@@ -137,7 +152,7 @@ major 4
 minor 1
 release 1
 x 8
-y 428
+y 484
 w 156
 h 20
 font "helvetica-medium-r-14.0"
@@ -156,7 +171,7 @@ major 4
 minor 7
 release 0
 x 168
-y 428
+y 484
 w 104
 h 20
 controlPv "$(P)$(R)Def120HzTrigDelay"
@@ -183,7 +198,7 @@ major 4
 minor 1
 release 1
 x 8
-y 484
+y 540
 w 156
 h 20
 font "helvetica-medium-r-14.0"
@@ -202,7 +217,7 @@ major 4
 minor 7
 release 0
 x 168
-y 484
+y 540
 w 104
 h 20
 controlPv "$(P)$(R)Def120HzSizeY"
@@ -675,7 +690,7 @@ minor 0
 release 0
 x 100
 y 268
-w 152
+w 160
 h 20
 fgColor index 14
 bgColor index 51
@@ -867,5 +882,400 @@ useHexPrefix
 newPos
 objType "controls"
 noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 296
+y 428
+w 120
+h 18
+controlPv "$(P)$(R)A3Binning_RBV"
+format "string"
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 5
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 168
+y 428
+w 120
+h 20
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
+controlPv "$(P)$(R)A3Binning"
+indicatorPv "$(P)$(R)A3Binning"
+font "helvetica-medium-r-14.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 428
+w 148
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Binning"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 144
+y 584
+w 128
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor index 80
+bgColor index 3
+value {
+  "Temp and Cooling"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 216
+y 632
+w 65
+h 18
+controlPv "$(P)$(R)TempControl_RBV"
+format "string"
+font "helvetica-medium-r-14.0"
+fgColor index 25
+bgColor index 5
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 124
+y 656
+w 180
+h 16
+controlPv "$(P)$(R)TempStatus_RBV"
+format "string"
+font "helvetica-medium-r-14.0"
+fgColor index 25
+fgAlarm
+bgColor index 5
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 284
+y 632
+w 65
+h 18
+controlPv "$(P)$(R)TemperatureActual"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fgColor index 25
+bgColor index 5
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 216
+y 608
+w 65
+h 18
+controlPv "$(P)$(R)SensorCooling_RBV"
+format "string"
+font "helvetica-medium-r-14.0"
+fgColor index 25
+bgColor index 5
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 216
+y 680
+w 65
+h 18
+controlPv "$(P)$(R)FanSpeed_RBV"
+format "string"
+font "helvetica-medium-r-14.0"
+fgColor index 25
+bgColor index 5
+autoHeight
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 12
+y 632
+w 110
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Temperature"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 60
+y 656
+w 60
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Status"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 60
+y 604
+w 60
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Cooler"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 92
+y 680
+w 30
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Fan"
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 124
+y 632
+w 80
+h 20
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
+controlPv "$(P)$(R)TempControl"
+indicatorPv "$(P)$(R)TempControl"
+font "helvetica-medium-r-14.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 124
+y 604
+w 80
+h 20
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
+controlPv "$(P)$(R)SensorCooling"
+indicatorPv "$(P)$(R)SensorCooling"
+font "helvetica-medium-r-14.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 124
+y 680
+w 80
+h 20
+fgColor index 14
+bgColor index 51
+inconsistentColor index 12
+topShadowColor index 2
+botShadowColor index 12
+controlPv "$(P)$(R)FanSpeed"
+indicatorPv "$(P)$(R)FanSpeed"
+font "helvetica-medium-r-14.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 168
+y 452
+w 120
+h 20
+fgColor index 14
+onColor index 51
+offColor index 51
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(P)$(R)SoftwareTrigger"
+pressValue "1"
+onLabel "Trigger"
+offLabel "Trigger"
+3d
+useEnumNumeric
+font "helvetica-medium-r-14.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 8
+y 452
+w 148
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Software trigger"
+}
 endObjectProperties
 
