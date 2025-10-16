@@ -9,19 +9,20 @@ w 400
 h 340
 font "helvetica-medium-r-12.0"
 ctlFont "helvetica-medium-r-12.0"
-btnFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-14.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
-ctlFgColor1 index 25
-ctlFgColor2 index 15
-ctlBgColor1 index 5
-ctlBgColor2 index 12
+ctlFgColor1 index 15
+ctlFgColor2 index 25
+ctlBgColor1 index 12
+ctlBgColor2 index 5
 topShadowColor index 1
 botShadowColor index 13
 title "CamType Andor3"
 snapToGrid
 gridSize 4
+showGrid
 disableScroll
 endScreenProperties
 
@@ -107,8 +108,8 @@ x 100
 y 156
 w 152
 h 20
-fgColor index 14
-bgColor index 63
+fgColor index 25
+bgColor index 5
 inconsistentColor index 12
 topShadowColor index 2
 botShadowColor index 12
@@ -152,7 +153,6 @@ font "helvetica-medium-r-14.0"
 fontAlign "right"
 fgColor index 14
 bgColor index 3
-useDisplayBg
 value {
   "PreAmp Gain"
 }
@@ -169,7 +169,7 @@ y 28
 w 48
 h 20
 fgColor index 25
-onColor index 6
+onColor index 10
 offColor index 5
 topShadowColor index 1
 botShadowColor index 11
@@ -194,7 +194,7 @@ y 28
 w 36
 h 20
 fgColor index 25
-onColor index 6
+onColor index 10
 offColor index 5
 topShadowColor index 1
 botShadowColor index 11
@@ -219,7 +219,7 @@ y 28
 w 36
 h 20
 fgColor index 25
-onColor index 6
+onColor index 10
 offColor index 5
 topShadowColor index 1
 botShadowColor index 11
@@ -270,8 +270,7 @@ h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
 fgColor index 14
-bgColor index 12
-useDisplayBg
+bgColor index 3
 value {
   "POWER_PV: "
 }
@@ -322,9 +321,9 @@ x 144
 y 188
 w 120
 h 28
-fgColor index 14
-onColor index 6
-offColor index 3
+fgColor index 25
+onColor index 10
+offColor index 5
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)GoToFullMode"
@@ -345,9 +344,9 @@ x 12
 y 188
 w 124
 h 28
-fgColor index 14
-onColor index 6
-offColor index 3
+fgColor index 25
+onColor index 10
+offColor index 5
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)GoTo120HzMode"
@@ -358,8 +357,8 @@ offLabel "Go To 120Hz Mode"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 7
@@ -372,10 +371,10 @@ controlPv "$(P)$(R)FrameRate_RBV"
 format "decimal"
 font "helvetica-medium-r-14.0"
 fgColor index 15
+fgAlarm
 bgColor index 12
 nullColor index 32
-smartRefresh
-fastUpdate
+showUnits
 useHexPrefix
 newPos
 objType "controls"
@@ -399,9 +398,8 @@ fgColor index 25
 bgColor index 5
 editable
 motifWidget
+limitsFromDb
 nullColor index 32
-smartRefresh
-fastUpdate
 useHexPrefix
 newPos
 objType "controls"
@@ -421,8 +419,7 @@ h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
 fgColor index 14
-bgColor index 0
-useDisplayBg
+bgColor index 3
 value {
   "Frame rate"
 }
@@ -438,8 +435,8 @@ x 144
 y 132
 w 120
 h 20
-fgColor index 14
-bgColor index 63
+fgColor index 25
+bgColor index 5
 inconsistentColor index 12
 topShadowColor index 2
 botShadowColor index 12
@@ -461,15 +458,14 @@ h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
 fgColor index 14
-bgColor index 0
-useDisplayBg
+bgColor index 3
 value {
   "Encoding"
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 7
@@ -481,20 +477,19 @@ h 16
 controlPv "$(P)$(R)PixelEncoding_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
-fgColor index 25
-bgColor index 5
-autoHeight
+fgColor index 15
+fgAlarm
+bgColor index 12
 nullColor index 32
-smartRefresh
-fastUpdate
+showUnits
 useHexPrefix
 newPos
 objType "controls"
 noExecuteClipMask
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 7
@@ -506,12 +501,11 @@ h 16
 controlPv "$(P)$(R)TransferRate"
 format "decimal"
 font "helvetica-medium-r-14.0"
-fgColor index 25
-bgColor index 5
-autoHeight
+fgColor index 15
+fgAlarm
+bgColor index 12
 nullColor index 32
-smartRefresh
-fastUpdate
+showUnits
 useHexPrefix
 newPos
 objType "controls"
@@ -531,8 +525,7 @@ h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
 fgColor index 14
-bgColor index 0
-useDisplayBg
+bgColor index 3
 value {
   "Max transfer rate"
 }
@@ -555,11 +548,9 @@ fgColor index 25
 fgAlarm
 bgColor index 5
 editable
-autoHeight
 motifWidget
+limitsFromDb
 nullColor index 40
-smartRefresh
-fastUpdate
 useHexPrefix
 newPos
 objType "controls"
@@ -583,11 +574,9 @@ fgColor index 25
 fgAlarm
 bgColor index 5
 editable
-autoHeight
 motifWidget
+limitsFromDb
 nullColor index 40
-smartRefresh
-fastUpdate
 useHexPrefix
 newPos
 objType "controls"
@@ -611,11 +600,9 @@ fgColor index 25
 fgAlarm
 bgColor index 5
 editable
-autoHeight
 motifWidget
+limitsFromDb
 nullColor index 40
-smartRefresh
-fastUpdate
 useHexPrefix
 newPos
 objType "controls"
