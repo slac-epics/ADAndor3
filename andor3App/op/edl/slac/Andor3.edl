@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1374
-y 333
+x 1770
+y 1152
 w 720
 h 1021
 font "helvetica-medium-r-18.0"
@@ -2733,34 +2733,8 @@ fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "Buffers max/used"
+  "Buffers used"
 }
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 570
-y 681
-w 50
-h 18
-controlPv "$(P)$(R)PoolMaxBuffers"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor index 25
-bgColor index 5
-autoHeight
-nullColor index 32
-smartRefresh
-fastUpdate
-useHexPrefix
-newPos
-objType "controls"
-noExecuteClipMask
 endObjectProperties
 
 # (Text Control)
@@ -2772,7 +2746,7 @@ release 0
 x 625
 y 681
 w 50
-h 18
+h 16
 controlPv "$(P)$(R)PoolUsedBuffers"
 format "decimal"
 font "helvetica-medium-r-14.0"
