@@ -304,7 +304,8 @@ void andor3::imageTask()
 	    }
 
 #ifdef NDBitsPerPixelString
-            setIntegerParam( NDBitsPerPixel,  bitsPerPixel  );
+	    setIntegerParam( NDBitsPerPixel,  bitsPerPixel  );
+	    callParamCallbacks();
 #endif
             if(pImage) {
                 pImage->uniqueId = count;
@@ -840,6 +841,7 @@ int andor3::setAOI()
 	AT_Command(handle_, L"AcquisitionStop");
 	AT_Flush(handle_);
 	setIntegerParam(ADAcquire, 0);
+	callParamCallbacks();
 
     binX = binValues[binning];
     binY = binValues[binning];
