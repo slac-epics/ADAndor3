@@ -1,0 +1,47 @@
+# Macros:
+#% macro, P, Device Prefix
+#% macro, R, Device Suffix
+
+record( stringin, "$(P)$(R)CamModel" )
+{
+	field( VAL,   "Zyla5.5USB3" )
+	field( PINI,  "YES" )
+}
+
+record( stringin, "$(P)$(R)CamModelScreen" )
+{
+	field( VAL,   "andor3Screens/Andor3Features.edl" )
+	field( PINI,  "YES" )
+}
+
+record( stringin, "$(P)$(R)CamType" )
+{
+	field( VAL,   "Andor3" )
+	field( PINI,  "YES" )
+}
+
+record( stringin, "$(P)$(R)CamTypeScreen" )
+{
+	field( VAL,   "andor3Screens/Andor3CamType.edl" )
+	field( PINI,  "YES" )
+}
+
+record( ao, "$(P)$(R)Temperature" )
+{
+        field( DISA, "1" )
+}
+
+record( mbbo, "$(P)$(R)TempControl" )
+{
+        field( DISA, "1" )
+}
+
+record( ao, "$(P)$(R)FrameRate" )
+{
+        field( HOPR, "51" )
+}
+
+record( ao, "$(P)$(R)FrameCount" )
+{
+        field( DISA, "1" )
+}
