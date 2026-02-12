@@ -11,9 +11,10 @@ endif
 
 LIBRARY_IOC_Linux += andor3
 LIBRARY_IOC_WIN32 += andor3
-LIB_SRCS += andor3.cpp
+LIB_SRCS += andor3.cpp camera_ts.cpp
 LIB_LIBS_WIN32 += atcorem
 LIB_SYS_LIBS_Linux += atcore
+LIB_SYS_LIBS_Linux += atutility
 
 DBD += andor3Support.dbd
 
@@ -31,6 +32,7 @@ listdevicesSrcs += listdevices.cpp
 PROD_LIBS += andor3
 PROD_LIBS_WIN32 += atcorem
 PROD_SYS_LIBS_Linux += atcore
+PROD_SYS_LIBS_Linux += atutility
 
 ifeq (windows-x64-debug, $(findstring windows-x64-debug, $(T_A)))
 USR_LDFLAGS_WIN32 += /NODEFAULTLIB:LIBCMT.lib

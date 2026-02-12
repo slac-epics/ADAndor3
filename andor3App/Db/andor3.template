@@ -406,3 +406,18 @@ record(bi, "$(P)$(R)MCPIntelligate_RBV")
    field(ONAM, "On")
 }
 
+record(bi, "$(P)$(R)MetadataInfo_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))A3_METADATA_INFO")
+   field(SCAN, "I/O Intr")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+}
+
+record(longin, "$(P)$(R)ClockFrequency_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))A3_CLOCK_FREQUENCY")
+    field(SCAN, "I/O Intr")
+}
