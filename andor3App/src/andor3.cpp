@@ -223,6 +223,7 @@ void andor3::shutdown(void)
 void andor3::imageTask()
 {
     epicsTimeStamp imageStamp;
+    epicsTimeStamp tsfifoStamp;
     int status;
     AT_U8  *image;
     int size;
@@ -261,11 +262,11 @@ void andor3::imageTask()
             }
             AT_Command(handle_, L"AcquisitionStart");
         }
-        
+
         unlock();
         status = AT_WaitBuffer(handle_, &image, &size, AT_INFINITE);
-        lock();
         if(status != AT_SUCCESS) {
+            lock();
             asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
                 "%s:%s: AT_WaitBuffer, error=%d\n", 
                 driverName, functionName, status);
@@ -281,6 +282,10 @@ void andor3::imageTask()
             AT_GetTimeStampFromMetadata(image, size, timeStamp);
             camera_ts = timeStamp / (double) clockFreq;
         }
+        // get the timing system timestamp
+        updateTimeStamp(&tsfifoStamp);
+
+        lock();
 
         getIntegerParam(ADNumImagesCounter, &number);
         number++;
@@ -336,7 +341,7 @@ void andor3::imageTask()
                 pImage->bitsPerElement = bitsPerPixel;
                 pImage->timeStamp = imageStamp.secPastEpoch +
                     (imageStamp.nsec / 1.0e9);
-                updateTimeStamp(&pImage->epicsTS);
+                pImage->epicsTS = tsfifoStamp;
 
                 AT_U8 *p = (AT_U8 *)pImage->pData;
                 /* Check if the camera supports frame info metadata*/
@@ -377,18 +382,29 @@ void andor3::imageTask()
 void andor3::tempTask(void)
 {
     int status;
+    int acquire;
     static const char *functionName = "tempTask";
 
     while(!exiting_) {
+        lock();
+
+        getIntegerParam(ADAcquire, &acquire);
+
         status  = getFeature(ADTemperatureActual);
-        status |= getFeature(Andor3SensorCooling);
         status |= getFeature(Andor3TempStatus);
+        /* Only read this when not acquiring since it is very slow. */
+        if (!acquire) {
+            status |= getFeature(Andor3SensorCooling);
+        }
 
         if(status && (status != AT_ERR_NOTIMPLEMENTED)) {
             asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
-                "%s:%s: temperature read error = %d\n", 
+                "%s:%s: temperature read error = %d\n",
                 driverName, functionName, status);
         }
+
+        unlock();
+
         epicsThreadSleep(1.0);
     }
 }
@@ -494,7 +510,7 @@ int andor3::getFeature(int paramIndex, AT_H handle)
     }
 
     /* reallocate image buffers if size changed */
-        if(!strcmp(info->featureNameMBS, "ImageSizeBytes")) {
+    if(!strcmp(info->featureNameMBS, "ImageSizeBytes")) {
         asynPrint(pasynUserSelf, ASYN_TRACEIO_DRIVER,
             "%s:%s: allocating buffers\n",
             driverName, functionName);
@@ -1441,7 +1457,7 @@ andor3::andor3(const char *portName, const char *cameraSerial, int maxBuffers,
     } else {
         maxFrames_ = maxFrames;
     }
-    
+
     /* create andor specific parameters */
     createParam(Andor3FrameRateString,        asynParamFloat64, &Andor3FrameRate);
     createParam(Andor3PixelEncodingString,    asynParamInt32,   &Andor3PixelEncoding);
@@ -1505,7 +1521,6 @@ andor3::andor3(const char *portName, const char *cameraSerial, int maxBuffers,
         return;
     }
 
-
     status  = setStringParam(ADManufacturer, "Andor");
 
     /* register features for change callback (invokes callback to set value)*/
@@ -1526,7 +1541,7 @@ andor3::andor3(const char *portName, const char *cameraSerial, int maxBuffers,
     status |= registerFeature(L"ControllerID",             ATstring, Andor3ControllerID);
     status |= registerFeature(L"FullAOIControl",           ATbool,   Andor3FullAOIControl);
 
-    status  = registerFeature(L"AOIWidth",                 ATint,    ADSizeX);
+    status |= registerFeature(L"AOIWidth",                 ATint,    ADSizeX);
     status |= registerFeature(L"AOIHeight",                ATint,    ADSizeY);
     status |= registerFeature(L"AOILeft",                  ATint,    ADMinX);
     status |= registerFeature(L"AOITop",                   ATint,    ADMinY);
@@ -1574,13 +1589,13 @@ andor3::andor3(const char *portName, const char *cameraSerial, int maxBuffers,
     startEvent_ = epicsEventCreate(epicsEventEmpty);
 
     /* launch image read task */
-    epicsThreadCreate("Andor3ImageTask", 
-                      epicsThreadPriorityMedium,
+    epicsThreadCreate("Andor3ImageTask",
+                      epicsThreadPriorityHigh,
                       epicsThreadGetStackSize(epicsThreadStackMedium),
                       c_imagetask, this);
 
     /* launch temp read task */
-    epicsThreadCreate("Andor3TempTask", 
+    epicsThreadCreate("Andor3TempTask",
                       epicsThreadPriorityMedium,
                       epicsThreadGetStackSize(epicsThreadStackMedium),
                       c_temptask, this);
